@@ -81,6 +81,7 @@ jobs:
 
     - name: compile macos
       run: |
+        python3 -m pip install pipes
         python3 scripts/platform_builder.py --platform=macos --arch=all --cmake_dir=$HOME/opt/cmake-$CMAKE_VERSION/CMake.app/Contents
         cp include/dobby.h build/macos
         tar -zcvf build/dobby-macos-all.tar.gz build/macos
